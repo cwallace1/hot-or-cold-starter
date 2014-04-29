@@ -224,7 +224,12 @@ h2 {
 	border-top-right-radius: 4px;
 	color: #fff;
 }
-
+.stuff {
+	color: #11a8ab;
+	margin-bottom: 0;
+	line-height: 5px;
+	padding-top:10px;
+}
 .game p {
 	margin-top: 0.5em;
 	font-size: 1.8em;

@@ -8,6 +8,7 @@ var goal,
     guess = "",
     n = 0,
     flag = true,
+    won = false,
     firstCheck = true;
 
 //starts the deal when doc is ready
@@ -72,6 +73,7 @@ function guessIt() {
         else if (guess === goal) {
             suddenly("You did it! Are you cheating?");
             color = "winner";
+            won = true;
             increment();
         }
         else if (10> difference) {
@@ -96,7 +98,7 @@ function guessIt() {
         }
     }
 //if it isnt the first game, the alerts react appropriately
-    else if (!firstCheck) {
+    else if (!firstCheck && !won) {
         if (!guessCheck) {
             suddenly("Do it again!");
             focal();
@@ -108,6 +110,7 @@ function guessIt() {
         else if (guess === goal){
             suddenly("You got it!");
             color = "winner";
+            won = true;
             difference = changeDiff;
             increment();
         }
@@ -117,7 +120,7 @@ function guessIt() {
             otherStack();
         }
         else if (changeDiff===difference){
-            suddenly("You didnt change your guess!");
+            suddenly("You didn't change your guess!");
             color = "same";
             otherStack();
         }
@@ -186,10 +189,9 @@ function otherStack() {
     lastGuess = guess;
 }
 
-//the alert. planning on doing a div or something else.
-//alerts suck.
+//the users notification
 function suddenly(stuff) {
-    alert(stuff);
+    $("#stuffHere").text(stuff);
 }
 
 //the "clear all" for the new game button
