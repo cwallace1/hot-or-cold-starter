@@ -45,7 +45,7 @@ a {
 	color: black;
 }
 
-ul li {	
+ul li {
 	display: inline;
 }
 
@@ -145,7 +145,7 @@ h1 {
 
 .content > div ul li {
 	padding: 5px 0;
-	display: block;	
+	display: block;
 	list-style-type: disc;
 	line-height: 1.5em;
 }
@@ -209,7 +209,7 @@ h1 {
 }
 
 h2 {
-	margin: 0 auto;	
+	margin: 0 auto;
 	background: #cc324b;
 	padding: 1em 0.4em;
 	font-size: 1.5em;
@@ -289,16 +289,16 @@ input:focus {
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #95a5a6; 
+   color: #95a5a6;
 }
 
-:-ms-input-placeholder {  
-   color: #95a5a6; 
+:-ms-input-placeholder {
+   color: #95a5a6;
 }
 
 ul.guessBox {
-	height: 80px;
 	margin: 10px auto 0;
+	min-height:80px;
 	background: #11a8ab;
 	padding: 0.5em;
 	display: block;
@@ -309,13 +309,34 @@ ul.guessBox {
 	overflow: auto;
 }
 ul.guessBox li {
-	display: inline;
-	background-color: #1a4e95;
+	display: inline-block;
 	padding: 0.3em;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	width: 95%;
+	width: 30px;
 	margin: 0.2em;
 	color: #fff;
+
+}
+.warm {
+	background-color: #e08032;
+}
+.cold {
+	background-color: #3366bb;
+}
+.static {
+	background-color: #484848;
+}
+.winner {
+	background-color: #a07f33;
+}
+.hot {
+	background-color: #ff4444;
+}
+.arctic {
+	background-color: #83aaff;
+}
+.same {
+	background-color: #222222;
 }
