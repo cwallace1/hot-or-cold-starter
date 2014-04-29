@@ -15,16 +15,6 @@ $(document).ready(function(){
     timeToGuess();
     focal();
 
-//this is for the new game button
-    $(".new").click(function(){
-        resetAll();
-        timeToGuess();
-    });
-
-//these are the two methods for inputting a guess
-    $("#guessButton").click(guessIt);
-    $(document).keypress(keyedYa(e));
-
  //leaving these as they were
 /*--- Display information modal box ---*/
     $(".what").click(function(){
@@ -35,7 +25,18 @@ $(document).ready(function(){
     $("a.close").click(function(){
         $(".overlay").fadeOut(1000);
     });
+
+//this is for the new game button
+    $(".new").click(function(){
+        resetAll();
+        timeToGuess();
+    });
+
+//these are the two methods for inputting a guess
+    $("#guessButton").click(guessIt);
+    $(document).keypress(keyedYa(e));
 });
+
 
 //this is the function that creates a new goal
 //on page load/new game press
@@ -61,35 +62,35 @@ function guessIt() {
         lastGuess = guess;
         difference = Math.abs(goal-guess);
         if (!guessCheck) {
-            suddenly("do it again!");
+            suddenly("Do it again!");
             focal();
         }
         else if (guess > 100) {
-            suddenly("try to keep it under 100.");
+            suddenly("Try to keep it under 100.");
             focal();
         }
         else if (guess === goal) {
-            suddenly("you did it! are you cheating?");
+            suddenly("You did it! Are you cheating?");
             color = "winner";
             increment();
         }
         else if (10> difference) {
-            suddenly("very hot!!!");
+            suddenly("Very hot!!!");
             color = "hot";
             firstStack();
         }
         else if (10< difference && 20>difference) {
-            suddenly("warm!");
+            suddenly("Warm!");
             color = "warm";
             firstStack();
         }
         else if (20< difference && 50>difference) {
-            suddenly("cold.");
+            suddenly("Cold.");
             color = "cold";
             firstStack();
         }
         else if (50< difference) {
-            suddenly("probably couldn't be farther.");
+            suddenly("Probably couldn't be farther.");
             color = "arctic";
             firstStack();
         }
@@ -97,46 +98,46 @@ function guessIt() {
 //if it isnt the first game, the alerts react appropriately
     else if (!firstCheck) {
         if (!guessCheck) {
-            suddenly("do it again!");
+            suddenly("Do it again!");
             focal();
         }
         else if (guess > 100) {
-            suddenly("try to keep it under 100.");
+            suddenly("Try to keep it under 100.");
             focal();
         }
         else if (guess === goal){
-            suddenly("you got it!");
+            suddenly("You got it!");
             color = "winner";
             difference = changeDiff;
             increment();
         }
         else if (changeDiff===difference && guess !== lastGuess){
-            suddenly("you've shot the gap!");
+            suddenly("You've shot the gap!");
             color = "static";
             otherStack();
         }
         else if (changeDiff===difference){
-            suddenly("you didnt change your guess!");
+            suddenly("You didnt change your guess!");
             color = "same";
             otherStack();
         }
         else if (changeDiff<difference && changeDiff<5){
-            suddenly("whoa! super hot!");
+            suddenly("Whoa! Super hot!");
             color = "hot";
             otherStack();
         }
         else if (changeDiff>difference && changeDiff>25){
-            suddenly("brrr.... arctic...");
+            suddenly("Brrr.... arctic...");
             color = "arctic";
             otherStack();
         }
         else if (changeDiff<difference){
-            suddenly("warmer!");
+            suddenly("Warmer!");
             color = "warm";
             otherStack();
         }
         else if (changeDiff>difference){
-            suddenly("colder!");
+            suddenly("Colder!");
             color = "cold";
             otherStack();
         }

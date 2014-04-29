@@ -63,6 +63,7 @@ nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 1.2em;
+	margin: 25px;
 }
 
 nav ul li:first-child {
@@ -74,7 +75,10 @@ nav ul li:last-child {
 }
 
 nav a {
-
+	background-color: #484848;
+	border: #ffffff solid 1px;
+	border-radius: 5px;
+	padding: 8px;
 	color: #fff;
 }
 
@@ -330,6 +334,7 @@ ul.guessBox li {
 }
 .winner {
 	background-color: #a07f33;
+	border: #ffffff solid 1px;
 }
 .hot {
 	background-color: #ff4444;
