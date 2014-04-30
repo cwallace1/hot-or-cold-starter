@@ -108,7 +108,7 @@ function guessIt() {
             focal();
         }
         else if (guess === goal){
-            suddenly("You got it!");
+            suddenly("You got it! Play again?");
             color = "winner";
             won = true;
             difference = changeDiff;
@@ -191,13 +191,14 @@ function otherStack() {
 
 //the users notification
 function suddenly(stuff) {
-    $("#stuffHere").text(stuff);
+    $("#feedback").text(stuff);
 }
 
 //the "clear all" for the new game button
 function resetAll() {
     flag = true;
     firstCheck = true;
+    won = false;
     focal();
     n=0;
     changeDiff = undefined;

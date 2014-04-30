@@ -47,19 +47,18 @@
 			</div>
 
 			<!-- logo text -->
-			<h1>HOT or COLD</h1>
+			<h1><span>HOT</span> or <font>COLD</font></h1>
 
 		</header>
 
 		<section class="game"> <!-- Guessing Section -->
 
-			<h2 id="feedback">Make your Guess!</h2>
+			<h2 id="feedback">Make your Choice!</h2>
 
 			<form onsubmit="return false;">
-				<input type="text" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Enter your Guess"/>
+				<input type="text" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Pick one, 1-100"/>
       			<input type="submit" id="guessButton" class="button" name="submit" value="Guess"/>
 			</form>
-		<p id="stuffHere" class="stuff"></p>
       		<p>Guess #<span id="count">0</span>!</p>
 
 			<ul id="guessList" class="guessBox clearfix">
