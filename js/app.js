@@ -33,9 +33,8 @@ $(document).ready(function(){
         timeToGuess();
     });
 
-//these are the two methods for inputting a guess
+//the method for inputting a guess
     $("#guessButton").click(guessIt);
-    $(document).keypress(keyedYa(e));
 });
 
 
@@ -50,6 +49,13 @@ function timeToGuess() {
         flag = false;
         goalNumba();
     }
+}
+
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+    return false;
+    return true;
 }
 
 //this is the block that runs when a user enters a guess
@@ -144,14 +150,6 @@ function guessIt() {
             color = "cold";
             otherStack();
         }
-    }
-}
-
-//checks for enter keypress and runs the guess checker
-function keyedYa(e){
-    if (e.which == 13) {
-        $.unbind("keypress");
-        guessIt();
     }
 }
 
